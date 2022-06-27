@@ -4,7 +4,6 @@ import java.text.NumberFormat;
 
 public class Alemao extends Amortizacao {
 
-    
     @Override
     public void capital(Emprestimo loan) {
         System.out.println(String.format("%2s %15s %15s %15s %15s", "n", "Juros", "Amortização", "Pagamento", "Saldo Devedor"));
