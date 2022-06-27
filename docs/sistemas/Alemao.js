@@ -1,6 +1,6 @@
-import SistemaAmortizacao from "./SistemaAmortizacao.js";
+import AmortizationSystem from "./AmortizationSystem.js";
 
-export default class Alemao extends SistemaAmortizacao {
+export default class Alemao extends AmortizationSystem {
     constructor() {
         super("Sistema Alemão");
         this.payment = 0;

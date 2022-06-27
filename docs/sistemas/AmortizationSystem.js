@@ -1,4 +1,4 @@
-export default class SistemaAmortizacao {
+export default class AmortizationSystem {
     constructor(name) {
         this.name = name;
         this.juros = 0;

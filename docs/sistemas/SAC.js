@@ -1,6 +1,6 @@
-import SistemaAmortizacao from "./SistemaAmortizacao.js";
+import AmortizationSystem from "./AmortizationSystem.js";
 
-export default class SAC extends SistemaAmortizacao {
+export default class SAC extends AmortizationSystem {
     constructor() {
         super("Sistema de Amortização Constante (SAC)");
     }
