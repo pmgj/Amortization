@@ -1,5 +1,5 @@
 /* global Intl */
-import {Sistemas} from "./Amortization.js";
+import Systems from "./Amortization.js";
 
 function GUI() {
     const formatter = new Intl.NumberFormat('pt-br', {
@@ -44,16 +44,16 @@ function GUI() {
         let taxa = parseFloat(form.taxa.value) / 100;
         if (montante > 0 && tempo > 0 && taxa > 0) {
             limparTabela();
-            let resultado = Sistemas[opcao].calcular(montante, tempo, taxa);
+            let resultado = Systems[opcao].calcular(montante, tempo, taxa);
             print(resultado);
         }
     }
     function registerEvents() {
         let form = document.forms[0];
         let select = form.opcao;
-        for (let i in Sistemas) {
+        for (let i in Systems) {
             let option = document.createElement("option");
-            option.text = Sistemas[i];
+            option.text = Systems[i];
             option.value = i;
             select.add(option);
         }        
