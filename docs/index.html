@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Sistemas de amortização</title>
+        <meta charset="UTF-8" />
+        <link type="text/css" rel="stylesheet" href="index.css" />
+        <link type="image/svg" rel="icon" href="favicon.svg" />
+        <script type="module" src="GUI.js"></script>
+    </head>
+    <body>
+        <form action="#">
+            <fieldset>
+                <legend>Sistemas de amortização:</legend>
+                <p><label for="opcao">Opção:</label> <select name="opcao" id="opcao"></select></p>
+                <p><label for="montante">Valor do financiamento:</label> <input type="number" name="montante" min="0" id="montante" /></p>
+                <p><label for="tempo">Tempo (em meses):</label> <input type="number" name="tempo" min="0" id="tempo" /></p>
+                <p><label for="taxa">Taxa de juros (mensal):</label> <input type="number" name="taxa" min="0" id="taxa" /></p>
+            </fieldset>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="5">Sistema de Amortização</th>
+                </tr>
+                <tr>
+                    <th>n</th>
+                    <th>Juros</th>
+                    <th>Amortização do Saldo devedor</th>
+                    <th>Pagamento</th>
+                    <th>Saldo devedor</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Totais</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>
