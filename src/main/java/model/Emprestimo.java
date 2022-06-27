@@ -3,14 +3,14 @@ package model;
 public class Emprestimo {
 
     public double getMontante() {
-        return 300000;
+        return 100000;
     }
 
     public double getTaxa() {
-        return 0.04;
+        return 0.01;
     }
 
     public int getTempo() {
-        return 5;
+        return 10;
     }
 }
