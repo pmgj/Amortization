@@ -1,8 +1,8 @@
-import PagamentoUnico from "./sistemas/PagamentoUnico.js";
-import Americano from "./sistemas/Americano.js";
-import SAC from "./sistemas/SAC.js";
-import Price from "./sistemas/Price.js";
-import Misto from "./sistemas/Misto.js";
-import Alemao from "./sistemas/Alemao.js";
+import AmericanSystem from "./sistemas/AmericanSystem.js";
+import ConstantSystem from "./sistemas/ConstantSystem.js";
+import FrenchSystem from "./sistemas/FrenchSystem.js";
+import GermanSystem from "./sistemas/GermanSystem.js";
+import LoanSystem from "./sistemas/LoanSystem.js";
+import SinglePaymentSystem from "./sistemas/SinglePaymentSystem.js";
 
-export let Sistemas = [new PagamentoUnico(), new Americano(), new SAC(), new Price(), new Misto(), new Alemao()];
+export let Sistemas = [new AmericanSystem(), new ConstantSystem(), new FrenchSystem(), new GermanSystem(), new LoanSystem(), new SinglePaymentSystem()];

@@ -1,8 +1,8 @@
 import AmortizationSystem from "./AmortizationSystem.js";
 
-export default class SAC extends AmortizationSystem {
+export default class ConstantSystem extends AmortizationSystem {
     constructor() {
-        super("Sistema de Amortização Constante (SAC)");
+        super("Constant System");
     }
     atualizarValores(montante, tempo, taxa) {
         this.juros = this.saldo * taxa;

@@ -1,8 +1,8 @@
 import AmortizationSystem from "./AmortizationSystem.js";
 
-export default class Alemao extends AmortizationSystem {
+export default class GermanSystem extends AmortizationSystem {
     constructor() {
-        super("Sistema Alemão");
+        super("German System");
         this.payment = 0;
     }
     inicializarValores(montante, tempo, taxa) {

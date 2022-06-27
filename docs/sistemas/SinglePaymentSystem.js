@@ -1,8 +1,8 @@
 import AmortizationSystem from "./AmortizationSystem.js";
 
-export default class PagamentoUnico extends AmortizationSystem {
+export default class SinglePayment extends AmortizationSystem {
     constructor() {
-        super("Sistema de Pagamento Único");
+        super("Single Payment System");
     }
     atualizarValores(montante, tempo, taxa) {
         this.juros = this.saldo * taxa;

@@ -1,8 +1,8 @@
 import AmortizationSystem from "./AmortizationSystem.js";
 
-export default class Misto extends AmortizationSystem {
+export default class LoanSystem extends AmortizationSystem {
     constructor() {
-        super("Sistema de Amortização Misto (SAM)");
+        super("Loan System");
         this.k = 0;
         this.pJuros = 0;
         this.pAmortizacao = 0;

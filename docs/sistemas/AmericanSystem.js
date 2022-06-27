@@ -1,8 +1,8 @@
 import AmortizationSystem from "./AmortizationSystem.js";
 
-export default class Americano extends AmortizationSystem {
+export default class AmericanSystem extends AmortizationSystem {
     constructor() {
-        super("Sistema Americano");
+        super("American System");
     }
     atualizarValores(montante, tempo, taxa) {
         this.juros = this.pagamento = this.saldo * taxa;
