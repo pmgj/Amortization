@@ -1,8 +1,8 @@
-import AmericanSystem from "./sistemas/AmericanSystem.js";
-import ConstantSystem from "./sistemas/ConstantSystem.js";
-import FrenchSystem from "./sistemas/FrenchSystem.js";
-import GermanSystem from "./sistemas/GermanSystem.js";
-import LoanSystem from "./sistemas/LoanSystem.js";
-import SinglePaymentSystem from "./sistemas/SinglePaymentSystem.js";
+import AmericanSystem from "./systems/AmericanSystem.js";
+import ConstantSystem from "./systems/ConstantSystem.js";
+import FrenchSystem from "./systems/FrenchSystem.js";
+import GermanSystem from "./systems/GermanSystem.js";
+import LoanSystem from "./systems/LoanSystem.js";
+import SinglePaymentSystem from "./systems/SinglePaymentSystem.js";
 
 export default [new AmericanSystem(), new ConstantSystem(), new FrenchSystem(), new GermanSystem(), new LoanSystem(), new SinglePaymentSystem()];
