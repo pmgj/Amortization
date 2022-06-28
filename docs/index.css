@@ -1,6 +1,7 @@
 fieldset {
     width: 470px;
     margin: 2em auto;
+    text-align: center;
 }
 legend {
     font-weight: bold;
@@ -22,5 +23,9 @@ th, td {
 }
 label {
     display: inline-block;
-    width: 180px;
+    width: 40%;
+    text-align: right;
+}
+input[type="number"], select {
+    width: 40%;
 }
