@@ -6,21 +6,21 @@ function GUI() {
         style: 'currency',
         currency: 'BRL'
     });
-    function limparTabela() {
+    function cleanTable() {
         let tbody = document.querySelector("tbody");
         tbody.innerHTML = "";
     }
-    function createRows(linha, texto) {
+    function createRows(row, text) {
         let cell = document.createElement("td");
-        let textNode = document.createTextNode(texto);
+        let textNode = document.createTextNode(text);
         cell.appendChild(textNode);
-        linha.appendChild(cell);
+        row.appendChild(cell);
     }
-    function setTotais(linha) {
-        let tabela = document.querySelector("table");
-        let rodape = tabela.tFoot.rows[0];
-        for (let i = 0; i < linha.length; i++) {
-            rodape.cells[i + 1].innerHTML = formatter.format(linha[i]);
+    function setTotals(row) {
+        let table = document.querySelector("table");
+        let footnote = table.tFoot.rows[0];
+        for (let i = 0; i < row.length; i++) {
+            footnote.cells[i + 1].innerHTML = formatter.format(row[i]);
         }
     }
     function print(matrix) {
@@ -34,34 +34,34 @@ function GUI() {
             }
             tbody.appendChild(tr);
         }
-        setTotais(matrix[i]);
+        setTotals(matrix[i]);
     }
-    function calcular() {
+    function compute() {
         let form = document.forms[0];
-        let opcao = form.opcao.selectedIndex;
-        let montante = parseFloat(form.montante.value);
-        let tempo = parseInt(form.tempo.value, 10);
-        let taxa = parseFloat(form.taxa.value) / 100;
-        if (montante > 0 && tempo > 0 && taxa > 0) {
-            limparTabela();
-            let resultado = Systems[opcao].calcular(montante, tempo, taxa);
-            print(resultado);
+        let option = form.option.selectedIndex;
+        let principal = parseFloat(form.principal.value);
+        let period = parseInt(form.period.value, 10);
+        let interestRate = parseFloat(form.interestRate.value) / 100;
+        if (principal > 0 && period > 0 && interestRate > 0) {
+            cleanTable();
+            let result = Systems[option].calcular(principal, period, interestRate);
+            print(result);
         }
     }
     function registerEvents() {
         let form = document.forms[0];
-        let select = form.opcao;
+        let select = form.option;
         for (let i in Systems) {
             let option = document.createElement("option");
             option.text = Systems[i];
             option.value = i;
             select.add(option);
         }        
-        form.opcao.onchange = calcular;
-        form.montante.onkeyup = calcular;
-        form.tempo.onkeyup = calcular;
-        form.taxa.onkeyup = calcular;
-        form.montante.focus();
+        form.option.onchange = compute;
+        form.principal.onkeyup = compute;
+        form.period.onkeyup = compute;
+        form.interestRate.onkeyup = compute;
+        form.principal.focus();
     }
 
     return {registerEvents};
