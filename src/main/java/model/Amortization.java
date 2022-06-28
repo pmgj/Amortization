@@ -2,7 +2,7 @@ package model;
 
 import java.text.NumberFormat;
 
-public abstract class Amortizacao {
+public abstract class Amortization {
 
     protected double juros = 0;
     protected double amortizacao = 0;
@@ -11,36 +11,36 @@ public abstract class Amortizacao {
     protected double somaJuros = 0;
     private final NumberFormat formatter = NumberFormat.getCurrencyInstance();
 
-    protected final void capital(Emprestimo loan) {
+    protected final void capital(double principal, int period, double interestRate) {
         System.out.println(String.format("%2s %15s %15s %15s %15s", "n", "Juros", "Amortização", "Pagamento", "Saldo Devedor"));
-        inicializarValores(loan);
+        inicializarValores(principal, period, interestRate);
         somaJuros += juros;
         printLine(0, juros, amortizacao, pagamento, saldo);
-        for (int n = 1; n < loan.getTempo(); n++) {
+        for (int n = 1; n < period; n++) {
             /* Calculando valores */
-            atualizarValores(loan);
+            atualizarValores(principal, period, interestRate);
             somaJuros += juros;
             /* Preenchendo a tabela */
             printLine(n, juros, amortizacao, pagamento, saldo);
         }
-        ultimaParcela(loan);
+        ultimaParcela(principal, period, interestRate);
         somaJuros += juros;
-        printLine(loan.getTempo(), juros, amortizacao, pagamento, 0);
-        printLine(somaJuros, loan.getMontante(), somaJuros + loan.getMontante(), 0);
+        printLine(period, juros, amortizacao, pagamento, 0);
+        printLine(somaJuros, principal, somaJuros + principal, 0);
     }
 
-    protected void inicializarValores(Emprestimo loan) {
+    protected void inicializarValores(double principal, int period, double interestRate) {
         juros = 0;
         amortizacao = 0;
         pagamento = 0;
-        saldo = loan.getMontante();
+        saldo = principal;
         somaJuros = 0;
     }
 
-    protected abstract void atualizarValores(Emprestimo loan);
+    protected abstract void atualizarValores(double principal, int period, double interestRate);
 
-    protected void ultimaParcela(Emprestimo loan) {
-        atualizarValores(loan);
+    protected void ultimaParcela(double principal, int period, double interestRate) {
+        atualizarValores(principal, period, interestRate);
     }
 
     private void printLine(int n, double juros, double amortizacao, double pagamento, double saldo) {
