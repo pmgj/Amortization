@@ -3,15 +3,15 @@ package model;
 public class SinglePaymentSystem extends Amortization {
 
     @Override
-    protected void atualizarValores(double principal, int period, double interestRate) {
-        juros = saldo * interestRate;
-        saldo += juros;
+    protected void updateValues(double principal, int period, double interestRate) {
+        this.interest = this.balance * interestRate;
+        this.balance += this.interest;
     }
 
     @Override
-    protected void ultimaParcela(double principal, int period, double interestRate) {
-        atualizarValores(principal, period, interestRate);
-        amortizacao = principal;
-        pagamento = saldo;
+    protected void lastInstallment(double principal, int period, double interestRate) {
+        updateValues(principal, period, interestRate);
+        this.amortization = principal;
+        this.installment = this.balance;
     }
 }

@@ -14,38 +14,38 @@ public class LoanSystem extends Amortization {
     private double sSaldo = 0;
 
     @Override
-    protected void inicializarValores(double principal, int period, double interestRate) {
-        super.inicializarValores(principal, period, interestRate);
+    protected void startValues(double principal, int period, double interestRate) {
+        super.startValues(principal, period, interestRate);
         double temp = Math.pow(1 + interestRate, period);
-        k = (interestRate * temp) / (temp - 1);
+        this.k = (interestRate * temp) / (temp - 1);
 
-        pAmortizacao = principal / period;
-        pPagamento = principal * k;
-        pSaldo = principal;
+        this.pAmortizacao = principal / period;
+        this.pPagamento = principal * this.k;
+        this.pSaldo = principal;
 
-        sAmortizacao = principal / period;
-        sSaldo = principal;
+        this.sAmortizacao = principal / period;
+        this.sSaldo = principal;
 
-        juros = 0;
-        somaJuros = 0;
-        saldo = principal;
-        pagamento = 0;
-        amortizacao = 0;
+        this.interest = 0;
+        this.interestSum = 0;
+        this.balance = principal;
+        this.installment = 0;
+        this.amortization = 0;
     }
 
     @Override
-    protected void atualizarValores(double principal, int period, double interestRate) {
-        pJuros = pSaldo * interestRate;
-        pAmortizacao = pPagamento - pJuros;
-        pSaldo -= pAmortizacao;
+    protected void updateValues(double principal, int period, double interestRate) {
+        this.pJuros = this.pSaldo * interestRate;
+        this.pAmortizacao = this.pPagamento - this.pJuros;
+        this.pSaldo -= this.pAmortizacao;
 
-        sJuros = sSaldo * interestRate;
-        sSaldo -= sAmortizacao;
-        sPagamento = sJuros + sAmortizacao;
+        this.sJuros = this.sSaldo * interestRate;
+        this.sSaldo -= this.sAmortizacao;
+        this.sPagamento = this.sJuros + this.sAmortizacao;
 
-        pagamento = (pPagamento + sPagamento) / 2;
-        juros = saldo * interestRate;
-        amortizacao = pagamento - juros;
-        saldo -= amortizacao;
+        this.installment = (this.pPagamento + this.sPagamento) / 2;
+        this.interest = this.balance * interestRate;
+        this.amortization = this.installment - this.interest;
+        this.balance -= this.amortization;
     }
 }

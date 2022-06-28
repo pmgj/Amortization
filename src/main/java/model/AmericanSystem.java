@@ -3,13 +3,13 @@ package model;
 public class AmericanSystem extends Amortization {
 
     @Override
-    protected void atualizarValores(double principal, int period, double interestRate) {
-        juros = pagamento = saldo * interestRate;
+    protected void updateValues(double principal, int period, double interestRate) {
+        this.interest = this.installment = this.balance * interestRate;
     }
 
     @Override
-    protected void ultimaParcela(double principal, int period, double interestRate) {
-        amortizacao = principal;
-        pagamento = amortizacao + juros;
+    protected void lastInstallment(double principal, int period, double interestRate) {
+        this.amortization = principal;
+        this.installment = this.amortization + this.interest;
     }
 }
