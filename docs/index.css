@@ -29,3 +29,15 @@ label {
 input[type="number"], select {
     width: 40%;
 }
+@media (max-width: 470px) {
+    fieldset {
+        width: 90%;
+    }
+    table {
+        width: 95%;
+        font-size: 13px;
+    }
+    th, td {
+        padding: 1px;
+    }
+}
