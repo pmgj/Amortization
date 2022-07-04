@@ -4,6 +4,10 @@ public class GermanSystem extends Amortization {
 
     private double payment = 0;
 
+    public GermanSystem() {
+        super("German System");
+    }
+
     @Override
     protected void startValues(double principal, int period, double interestRate) {
         this.interest = principal * interestRate;

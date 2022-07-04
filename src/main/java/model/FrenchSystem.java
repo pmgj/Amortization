@@ -4,6 +4,10 @@ public class FrenchSystem extends Amortization {
 
     private double k;
 
+    public FrenchSystem() {
+        super("French System");
+    }
+
     @Override
     protected void startValues(double principal, int period, double interestRate) {
         super.startValues(principal, period, interestRate);

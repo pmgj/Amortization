@@ -1,32 +1,33 @@
 package model;
 
-import java.text.NumberFormat;
-
 public abstract class Amortization {
 
+    protected String name;
     protected double interest = 0;
     protected double amortization = 0;
     protected double installment = 0;
     protected double balance = 0;
     protected double interestSum = 0;
-    private final NumberFormat formatter = NumberFormat.getCurrencyInstance();
 
-    protected final void capital(double principal, int period, double interestRate) {
-        System.out.println(String.format("%2s %15s %15s %15s %15s", "n", "Juros", "Amortização", "Pagamento", "Saldo Devedor"));
+    public Amortization(String name) {
+        this.name = name;
+    }
+
+    public final Schedule capital(double principal, int period, double interestRate) {
+        Schedule schedule = new Schedule();
         this.startValues(principal, period, interestRate);
         this.interestSum += interest;
-        this.printLine(0, this.interest, this.amortization, this.installment, this.balance);
+        schedule.addItem(new Item(0, this.interest, this.amortization, this.installment, this.balance));
         for (int n = 1; n < period; n++) {
-            /* Calculando valores */
             this.updateValues(principal, period, interestRate);
             this.interestSum += interest;
-            /* Preenchendo a tabela */
-            this.printLine(n, this.interest, this.amortization, this.installment, this.balance);
+            schedule.addItem(new Item(n, this.interest, this.amortization, this.installment, this.balance));
         }
         this.lastInstallment(principal, period, interestRate);
         this.interestSum += this.interest;
-        this.printLine(period, this.interest, this.amortization, this.installment, 0);
-        this.printLine(this.interestSum, principal, this.interestSum + principal, 0);
+        schedule.addItem(new Item(period, this.interest, this.amortization, this.installment, 0));
+        schedule.setTotals(new Item(0, this.interestSum, principal, this.interestSum + principal, 0));
+        return schedule;
     }
 
     protected void startValues(double principal, int period, double interestRate) {
@@ -43,11 +44,8 @@ public abstract class Amortization {
         updateValues(principal, period, interestRate);
     }
 
-    private void printLine(int n, double _interest, double _amortization, double _installment, double _balance) {
-        System.out.println(String.format("%2d %15s %15s %15s %15s", n, formatter.format(_interest), formatter.format(_amortization), formatter.format(_installment), formatter.format(_balance)));
-    }
-
-    private void printLine(double _interest, double _amortization, double _installment, double _balance) {
-        System.out.println(String.format("-> %15s %15s %15s %15s", formatter.format(_interest), formatter.format(_amortization), formatter.format(_installment), formatter.format(_balance)));
+    @Override
+    public String toString() {
+        return this.name;
     }
 }

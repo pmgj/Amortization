@@ -13,6 +13,10 @@ public class LoanSystem extends Amortization {
     private double sPagamento = 0;
     private double sSaldo = 0;
 
+    public LoanSystem() {
+        super("Loan System");
+    }
+
     @Override
     protected void startValues(double principal, int period, double interestRate) {
         super.startValues(principal, period, interestRate);
