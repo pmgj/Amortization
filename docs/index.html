@@ -1,44 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <title>Amortization Systems</title>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link type="text/css" rel="stylesheet" href="index.css" />
-        <link type="image/svg" rel="icon" href="favicon.svg" />
-        <script type="module" src="GUI.js"></script>
-    </head>
-    <body>
-        <form action="#">
-            <fieldset>
-                <legend>Amortization System:</legend>
-                <p><label for="option">Option:</label> <select name="option" id="option"></select></p>
-                <p><label for="principal">Principal:</label> <input type="number" name="principal" min="0" id="principal" /></p>
-                <p><label for="period">Period in months:</label> <input type="number" name="period" min="0" id="period" /></p>
-                <p><label for="rate">Monthly interest rate:</label> <input type="number" name="interestRate" min="0" id="rate" /></p>
-            </fieldset>
-        </form>
-        <table>
-            <thead>
-                <tr>
-                    <th>n</th>
-                    <th>Interest</th>
-                    <th>Amortization</th>
-                    <th>Installment</th>
-                    <th>Balance</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th>Totals</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tfoot>
-        </table>
-    </body>
+
+<head>
+    <title>Amortization Systems</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link type="text/css" rel="stylesheet" href="index.css" />
+    <link type="image/svg" rel="icon" href="favicon.svg" />
+    <script type="module" src="GUI.js"></script>
+</head>
+
+<body>
+    <form action="#">
+        <fieldset>
+            <legend>Amortization System:</legend>
+            <p><label for="option">Option:</label> <select name="option" id="option"></select></p>
+            <p><label for="principal">Principal:</label> <input type="number" name="principal" min="0" id="principal" />
+            </p>
+            <p><label for="period">Period in months:</label> <input type="number" name="period" min="0" id="period" />
+            </p>
+            <p><label for="rate">Monthly interest rate:</label> <input type="number" name="interestRate" min="0"
+                    id="rate" /></p>
+        </fieldset>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>n</th>
+                <th>Interest</th>
+                <th>Amortization</th>
+                <th>Installment</th>
+                <th>Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Totals</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
 </html>
