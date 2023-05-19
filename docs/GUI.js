@@ -36,9 +36,9 @@ class GUI {
     compute() {
         let form = document.forms[0];
         let option = form.option.selectedIndex;
-        let principal = parseFloat(form.principal.value);
-        let period = parseInt(form.period.value, 10);
-        let interestRate = parseFloat(form.interestRate.value) / 100;
+        let principal = form.principal.valueAsNumber;
+        let period = form.period.valueAsNumber;
+        let interestRate = form.interestRate.valueAsNumber / 100;
         if (principal > 0 && period > 0 && interestRate > 0) {
             this.cleanTable();
             let result = Systems[option].calcular(principal, period, interestRate);
