@@ -48,18 +48,18 @@
                     <tbody>
                         <c:forEach var="item" items="${schedule.items}">
                             <tr>
-                                <td>${item.period}</td>
+                                <td>${item.period()}</td>
                                 <td>
-                                    <fmt:formatNumber value="${item.interest}" type="currency" />
+                                    <fmt:formatNumber value="${item.interest()}" type="currency" />
                                 </td>
                                 <td>
-                                    <fmt:formatNumber value="${item.amortization}" type="currency" />
+                                    <fmt:formatNumber value="${item.amortization()}" type="currency" />
                                 </td>
                                 <td>
-                                    <fmt:formatNumber value="${item.installment}" type="currency" />
+                                    <fmt:formatNumber value="${item.installment()}" type="currency" />
                                 </td>
                                 <td>
-                                    <fmt:formatNumber value="${item.balance}" type="currency" />
+                                    <fmt:formatNumber value="${item.balance()}" type="currency" />
                                 </td>
                             </tr>
                         </c:forEach>
@@ -68,16 +68,16 @@
                         <tr>
                             <th>Totals</th>
                             <td>
-                                <fmt:formatNumber value="${schedule.totals.interest}" type="currency" />
+                                <fmt:formatNumber value="${schedule.totals.interest()}" type="currency" />
                             </td>
                             <td>
-                                <fmt:formatNumber value="${schedule.totals.amortization}" type="currency" />
+                                <fmt:formatNumber value="${schedule.totals.amortization()}" type="currency" />
                             </td>
                             <td>
-                                <fmt:formatNumber value="${schedule.totals.installment}" type="currency" />
+                                <fmt:formatNumber value="${schedule.totals.installment()}" type="currency" />
                             </td>
                             <td>
-                                <fmt:formatNumber value="${schedule.totals.balance}" type="currency" />
+                                <fmt:formatNumber value="${schedule.totals.balance()}" type="currency" />
                             </td>
                         </tr>
                     </tfoot>

@@ -27,7 +27,7 @@ public class AmortizationServlet extends HttpServlet {
             period = Integer.parseInt(req.getParameter("period"));
             rate = Double.parseDouble(req.getParameter("rate"));
             var list = (List<Amortization>) req.getServletContext().getAttribute("systems");
-            Amortization am = list.get(option);
+            var am = list.get(option);
             Schedule schedule = am.capital(principal, period, rate / 100.0);
             req.setAttribute("schedule", schedule);
         }

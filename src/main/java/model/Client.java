@@ -11,13 +11,13 @@ public class Client {
         System.out.println(
                 String.format("%2s %15s %15s %15s %15s", "n", "Interest", "Amortization", "Installment", "Balance"));
         for (Item item : schedule.getItems()) {
-            System.out.println(String.format("%2d %15s %15s %15s %15s", item.getPeriod(),
-                    formatter.format(item.getInterest()), formatter.format(item.getAmortization()),
-                    formatter.format(item.getInstallment()), formatter.format(item.getBalance())));
+            System.out.println(String.format("%2d %15s %15s %15s %15s", item.period(),
+                    formatter.format(item.interest()), formatter.format(item.amortization()),
+                    formatter.format(item.installment()), formatter.format(item.balance())));
         }
         Item totals = schedule.getTotals();
-        System.out.println(String.format("-> %15s %15s %15s %15s", formatter.format(totals.getInterest()),
-                formatter.format(totals.getAmortization()), formatter.format(totals.getInstallment()),
-                formatter.format(totals.getBalance())));
+        System.out.println(String.format("-> %15s %15s %15s %15s", formatter.format(totals.interest()),
+                formatter.format(totals.amortization()), formatter.format(totals.installment()),
+                formatter.format(totals.balance())));
     }
 }
