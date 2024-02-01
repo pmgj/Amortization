@@ -13,28 +13,24 @@
 </head>
 
 <body>
-    <form action="#">
-        <fieldset class="container-sm">
-            <legend>Amortization System:</legend>
-            <div class="mb-3">
-                <label for="option" class="form-label">Option:</label>
-                <select class="form-select" name="option" id="option"></select>
-            </div>
-            <div class="mb-3">
-                <label for="principal" class="form-label">Principal:</label>
-                <input type="number" class="form-control"
-                    name="principal" min="0" id="principal">
-            </div>
-            <div class="mb-3">
-                <label for="period" class="form-label">Period in months:</label>
-                <input type="number"
-                    class="form-control" name="period" min="0" id="period">
-            </div>
-            <div class="mb-3">
-                <label for="rate" class="form-label">Monthly interest rate:</label>
-                <input type="number" class="form-control" name="interestRate" min="0" id="rate">
-            </div>
-        </fieldset>
+    <h1 class="text-center">Amortization System</h1>
+    <form action="#" class="container-sm">
+        <div class="row my-3">
+            <label for="option" class="col form-label">Option:</label>
+            <select class="col form-select" name="option" id="option"></select>
+        </div>
+        <div class="row mb-3">
+            <label for="principal" class="col form-label">Principal:</label>
+            <input type="number" class="col form-control" name="principal" min="0" id="principal">
+        </div>
+        <div class="row mb-3">
+            <label for="period" class="col form-label">Period in months:</label>
+            <input type="number" class="col form-control" name="period" min="0" id="period">
+        </div>
+        <div class="row mb-3">
+            <label for="rate" class="col form-label">Monthly interest rate:</label>
+            <input type="number" class="col form-control" name="interestRate" min="0" id="rate">
+        </div>
     </form>
     <table class="container-sm table table-striped">
         <thead class="table-dark">
